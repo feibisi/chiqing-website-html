@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赤晴珠宝 - 领先的现代黄金设计与订购平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B91C1C',
+                        secondary: '#111827',
+                        accent: '#E11D48',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(17,24,39,0.9) 0%, rgba(185,28,28,0.8) 100%);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(225, 29, 72, 0.3);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #B91C1C;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, #111827 0%, #1F2937 100%);
+            border-left: 4px solid #B91C1C;
+        }
+        
+        .custom-shape-divider-bottom-1715619292 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom-1715619292 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+
+        .custom-shape-divider-bottom-1715619292 .shape-fill {
+            fill: #111827;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-secondary text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-gem text-primary text-2xl"></i>
+                    <a href="#" class="text-2xl font-bold">赤晴<span class="text-primary">珠宝</span></a>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link px-2 py-4">首页</a>
+                    <a href="#products" class="nav-link px-2 py-4">产品系列</a>
+                    <a href="#custom" class="nav-link px-2 py-4">定制服务</a>
+                    <a href="#about" class="nav-link px-2 py-4">关于我们</a>
+                    <a href="#contact" class="nav-link px-2 py-4">联系我们</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-white hover:text-primary transition"><i class="fas fa-search"></i></a>
+                    <a href="#" class="text-white hover:text-primary transition"><i class="fas fa-user"></i></a>
+                    <a href="#" class="text-white hover:text-primary transition"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="hidden md:hidden py-4">
+                <a href="#home" class="block py-2 px-4 hover:bg-primary hover:text-white rounded">首页</a>
+                <a href="#products" class="block py-2 px-4 hover:bg-primary hover:text-white rounded">产品系列</a>
+                <a href="#custom" class="block py-2 px-4 hover:bg-primary hover:text-white rounded">定制服务</a>
+                <a href="#about" class="block py-2 px-4 hover:bg-primary hover:text-white rounded">关于我们</a>
+                <a href="#contact" class="block py-2 px-4 hover:bg-primary hover:text-white rounded">联系我们</a>
+                <div class="flex space-x-4 mt-4 px-4">
+                    <a href="#" class="text-white hover:text-primary"><i class="fas fa-search"></i></a>
+                    <a href="#" class="text-white hover:text-primary"><i class="fas fa-user"></i></a>
+                    <a href="#" class="text-white hover:text-primary"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="relative h-screen flex items-center justify-center hero-gradient text-white">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="container mx-auto px-4 z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">现代黄金艺术<span class="text-primary">.</span></h1>
+                <p class="text-xl md:text-2xl mb-8">赤晴珠宝 - 重新定义黄金设计与佩戴体验</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#products" class="bg-primary hover:bg-accent text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">探索系列</a>
+                    <a href="#custom" class="bg-transparent hover:bg-white hover:text-secondary border-2 border-white text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">定制设计</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0">
+            <div class="custom-shape-divider-bottom-1715619292">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色区域 -->
+    <section class="py-16 bg-secondary text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-gray-800 hover:bg-gray-700 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">卓越品质</h3>
+                    <p class="text-gray-300">采用999.9纯金，每件作品都经过严格质检，确保完美无瑕</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-lg bg-gray-800 hover:bg-gray-700 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">创新设计</h3>
+                    <p class="text-gray-300">国际设计师团队打造，融合传统工艺与现代美学</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-lg bg-gray-800 hover:bg-gray-700 transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">终身保障</h3>
+                    <p class="text-gray-300">提供终身免费清洗保养服务，让您的珠宝永葆光彩</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品系列 -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">精选<span class="text-primary">系列</span></h2>
+                <p class="max-w-2xl mx-auto text-gray-600">探索我们的标志性黄金珠宝系列，每一件都讲述着独特的故事</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 产品1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="赤晴经典系列" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">新品</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">赤晴经典系列</h3>
+                        <p class="text-gray-600 mb-4">简约而不简单的设计，适合日常佩戴</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">¥3,280起</span>
+                            <button class="bg-secondary hover:bg-primary text-white px-4 py-2 rounded-full transition duration-300">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 产品2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="赤晴奢华系列" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">赤晴奢华系列</h3>
+                        <p class="text-gray-600 mb-4">精湛工艺打造的奢华珠宝，彰显非凡品味</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">¥8,880起</span>
+                            <button class="bg-secondary hover:bg-primary text-white px-4 py-2 rounded-full transition duration-300">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 产品3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="赤晴婚庆系列" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-bold">热销</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">赤晴婚庆系列</h3>
+                        <p class="text-gray-600 mb-4">见证爱情的永恒，为新人打造的专属珠宝</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">¥12,880起</span>
+                            <button class="bg-secondary hover:bg-primary text-white px-4 py-2 rounded-full transition duration-300">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">浏览全部系列</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 定制服务 -->
+    <section id="custom" class="py-20 bg-secondary text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">专属<span class="text-primary">定制</span>服务</h2>
+                    <p class="text-gray-300 mb-6">您的故事值得被独特诠释。赤晴珠宝提供一对一专属设计服务，将您的灵感与情感融入黄金艺术。</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>与专业设计师一对一沟通</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>3D设计预览，满意后再制作</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>使用999.9纯金，手工精制</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>15-20个工作日内交付</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="bg-primary hover:bg-accent text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300">开始定制</a>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="定制服务" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-black opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center p-6">
+                                <i class="fas fa-gem text-primary text-5xl mb-4"></i>
+                                <h3 class="text-2xl font-bold mb-2">您的专属珠宝</h3>
+                                <p class="text-gray-200">独一无二的设计，只为特别的您</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户评价 -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">客户<span class="text-primary">评价</span></h2>
+                <p class="max-w-2xl mx-auto text-gray-600">听听我们的客户对赤晴珠宝的真实感受</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 评价1 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"赤晴的婚戒设计完全超出了我的预期。设计师耐心听取我们的故事，最终打造出独一无二的戒指，完美诠释了我们的爱情。"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-700 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="客户" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">李小姐</h4>
+                            <p class="text-gray-400 text-sm">婚庆系列客户</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 评价2 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"作为收藏爱好者，我对黄金品质要求极高。赤晴的999.9纯金和精湛工艺让我非常满意，已经成为我的首选珠宝品牌。"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-700 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="客户" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">王先生</h4>
+                            <p class="text-gray-400 text-sm">奢华系列客户</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 评价3 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"定制了母亲的生日礼物，从设计到成品都非常专业。母亲收到后爱不释手，说这是她收到过最有意义的礼物。"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-700 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="客户" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">张女士</h4>
+                            <p class="text-gray-400 text-sm">定制服务客户</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="https://images.unsplash.com/photo-1605106715994-18d3fecffb98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="关于赤晴" class="w-full rounded-lg shadow-xl">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">关于<span class="text-primary">赤晴</span></h2>
+                    <p class="text-gray-600 mb-6">赤晴珠宝创立于2015年，致力于重新定义现代黄金珠宝的设计与佩戴体验。我们相信黄金不仅是财富的象征，更是艺术与情感的载体。</p>
+                    <p class="text-gray-600 mb-8">我们的设计师团队来自世界各地，融合东方美学与西方现代设计理念，打造出独具特色的黄金珠宝作品。每一件赤晴珠宝都经过至少30道工序，由资深工匠手工完成。</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-primary font-bold text-xl mb-2">30+</h3>
+                            <p class="text-gray-600">国际设计师</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-primary font-bold text-xl mb-2">50,000+</h3>
+                            <p class="text-gray-600">满意客户</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-primary font-bold text-xl mb-2">999.9</h3>
+                            <p class="text-gray-600">纯金品质</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-primary font-bold text-xl mb-2">100%</h3>
+                            <p class="text-gray-600">手工制作</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="bg-secondary hover:bg-primary text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300">了解更多</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">联系<span class="text-primary">我们</span></h2>
+                <p class="max-w-2xl mx-auto text-gray-600">无论您有任何问题或需求，我们的专业团队随时为您服务</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-secondary text-white p-10">
+                        <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+                        
+                        <div class="flex items-start mb-6">
+                            <i class="fas fa-map-marker-alt text-primary text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">门店地址</h4>
+                                <p class="text-gray-300">上海市黄浦区南京东路123号赤晴大厦</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <i class="fas fa-phone-alt text-primary text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">客服热线</h4>
+                                <p class="text-gray-300">400-888-8888</p>
+                                <p class="text-gray-300">周一至周日 9:00-21:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <i class="fas fa-envelope text-primary text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">电子邮件</h4>
+                                <p class="text-gray-300">service@chiqing.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">关注我们</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-weixin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-weibo"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-10">
+                        <h3 class="text-2xl font-bold mb-6 text-secondary">留言咨询</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">姓名</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">电子邮箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">电话</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">留言内容</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-accent text-white font-bold py-3 px-4 rounded-lg transition duration-300">提交留言</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-gem text-primary text-2xl"></i>
+                        <a href="#" class="text-2xl font-bold">赤晴<span class="text-primary">珠宝</span></a>
+                    </div>
+                    <p class="text-gray-400">领先的现代黄金设计与订购平台</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary transition">首页</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-primary transition">产品系列</a></li>
+                        <li><a href="#custom" class="text-gray-400 hover:text-primary transition">定制服务</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-primary transition">关于我们</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">客户服务</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">购物指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">支付方式</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">配送方式</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">售后服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">常见问题</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">订阅电子报</h4>
+                    <p class="text-gray-400 mb-4">订阅获取最新产品信息和独家优惠</p>
+                    <form class="flex">
+                        <input type="email" placeholder="您的邮箱" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-primary hover:bg-accent px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 mb-4 md:mb-0">© 2023 赤晴珠宝 版权所有</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-primary transition">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-primary transition">使用条款</a>
+                        <a href="#" class="text-gray-500 hover:text-primary transition">Cookie政策</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // 移动端菜单切换
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // 如果是移动端菜单，点击后关闭菜单
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
